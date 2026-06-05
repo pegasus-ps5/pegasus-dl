@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.1.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.1.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.2.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.2.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,7 +25,7 @@ or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.1.0 moves provider handling into the payload. Direct package links
+Version 1.2.0 adds merge progress for segmented downloads. Direct package links
 still queue immediately, while supported provider pages can be resolved or
 captured through the PS5 browser without running a separate resolver service.
 
@@ -37,7 +37,7 @@ captured through the PS5 browser without running a separate resolver service.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.1.0/pegasus_dl.elf) | `1.1.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.2.0/pegasus_dl.elf) | `1.2.0` |
 
 ## Quick Start
 
@@ -57,11 +57,11 @@ captured through the PS5 browser without running a separate resolver service.
 
 ## Features
 
-| Area | Included in 1.1.0 |
+| Area | Included in 1.2.0 |
 | --- | --- |
 | Sources | Add catalog files or URL sources, enable or disable sources, delete sources |
 | Library | Search packages, filter by source, review versions, sizes, details, and links |
-| Downloads | Queue direct links, track progress, speed, ETA, and final status |
+| Downloads | Queue direct links, track download and merge progress, speed, ETA, and final status |
 | Queue control | Pause, resume, cancel, retry, and clear finished jobs |
 | Storage | Browse writable destinations, create folders, and choose where downloads land |
 | Performance | Use multiple download connections with resume support when the host allows it |
@@ -114,7 +114,7 @@ Minimal catalog:
 
 ## Provider Links
 
-Pegasus DL does not require the separate Pegasus Resolver service in 1.1.0.
+Pegasus DL does not require the separate Pegasus Resolver service in 1.2.0.
 Provider handling now lives in the payload.
 
 Direct links continue to download without any provider flow. For supported
@@ -130,14 +130,11 @@ Current provider handling:
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.1.0 Notes
+## 1.2.0 Notes
 
-- External Pegasus Resolver setup is no longer required.
-- Catalog sources by URL is supported.
-- Provider handling covers built-in resolver flows, direct browser capture, and
-  guarded capture for unknown links.
-- The PS5 browser may be opened during provider flows. Complete any provider
-  challenge there (eg. Cloudflare), then return Pegasus DL will capture the direct link automatically.
+- Segmented downloads report merge progress after all segments finish
+  downloading.
+- Queue rows show a `merging` state so long copy/merge steps do not look stuck.
 
 ## Scope
 
