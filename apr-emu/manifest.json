@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "latestReleaseId": "0.2.7.6-release",
+  "versions": [
+    {
+      "id": "0.2b-release",
+      "version": "0.2b",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.0b",
+      "sha256": "6f13898045bfa1089cd9797355fcb5ff462de9067223f392ce5c7d0cb556f277",
+      "size": 254326
+    },
+    {
+      "id": "0.2b-debug",
+      "version": "0.2b",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.0b-debug",
+      "sha256": "85ffd9cedeecd34bff78aa230a11a7f9a64b7be7ed7102185fbfa9f2762714eb",
+      "size": 394502
+    },
+    {
+      "id": "0.2.1-release",
+      "version": "0.2.1",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.1",
+      "sha256": "042a53f6e98785b005af2f9fb397c832c65d620bed917c26d1e280ede9f12965",
+      "size": 255750
+    },
+    {
+      "id": "0.2.4-release",
+      "version": "0.2.4",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.4",
+      "sha256": "7a257448f9df11efc6b8f123aee2faba798b4580bbe3d97bdcc54e48b9abd311",
+      "size": 222246
+    },
+    {
+      "id": "0.2.4-debug",
+      "version": "0.2.4",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.4-debug",
+      "sha256": "61ffa03ffb196f6e846f55f8702209a0325ae319501929e0feca95bdcec5c0a2",
+      "size": 356054
+    },
+    {
+      "id": "0.2.5-release",
+      "version": "0.2.5",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.5",
+      "sha256": "85baf50299d04fd549f09974d990abec4dcf68226011aec34bc3b726e1ab7fb4",
+      "size": 224214
+    },
+    {
+      "id": "0.2.5.3-release",
+      "version": "0.2.5.3",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.5.3",
+      "sha256": "a21a87c3f6901a61bdf10704cae7c1aba8c16037a345147c12e59cae973137f3",
+      "size": 223110
+    },
+    {
+      "id": "0.2.6-release",
+      "version": "0.2.6",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.6",
+      "sha256": "16cee7263a7cbec8f23c334b67afe3f2e783cb575a17fe47f1c9d95ac0481fcb",
+      "size": 222806
+    },
+    {
+      "id": "0.2.6-debug",
+      "version": "0.2.6",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.6-debug",
+      "sha256": "af93b07a4bfa04aea032509fc7e9c5165a1d15601f9557530bb87aa1734e9074",
+      "size": 363094
+    },
+    {
+      "id": "0.2.7.1-release",
+      "version": "0.2.7.1",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.7.1",
+      "sha256": "0f57ffd092b220e41a3c0a0a8cfd6d8d9661cd410fd6238642a6820f0ad108c1",
+      "size": 229302
+    },
+    {
+      "id": "0.2.7.1-debug",
+      "version": "0.2.7.1",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.7.1-debug",
+      "sha256": "4b117cb181906ffaf5899e90f294de7d7758a4cd81af75545399fcabde030a16",
+      "size": 369718
+    },
+    {
+      "id": "0.2.7.4-release",
+      "version": "0.2.7.4",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.7.4",
+      "sha256": "e37d0c2f6f1f66d0ebcbea40ff19ea3ff98001f185089de9b074b5a63a2b6a38",
+      "size": 229638
+    },
+    {
+      "id": "0.2.7.4-debug",
+      "version": "0.2.7.4",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.7.4-debug",
+      "sha256": "b87a5b07a6eef99abdcfb757edfc7eb63f7a19d25186114720c3fc125ed81556",
+      "size": 369846
+    },
+    {
+      "id": "0.2.7.5-release",
+      "version": "0.2.7.5",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.7.5",
+      "sha256": "755cfa1bffa3b65f60cced2f162e1182d97781e200178e0e7e66b1775ef3cf4e",
+      "size": 230086
+    },
+    {
+      "id": "0.2.7.5-debug",
+      "version": "0.2.7.5",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.7.5-debug",
+      "sha256": "48f900c04e047761b1f35a1ec6ea1deaf3fa28cfdd08f7d693220ad79b196baa",
+      "size": 377526
+    },
+    {
+      "id": "0.2.7.6-release",
+      "version": "0.2.7.6",
+      "build": "release",
+      "file": "libSceAmpr.sprx-0.2.7.6",
+      "sha256": "7c4f0c4a2c942a2dfc7aeb399434aa65aec948825f74b32d96cb118438ee7df8",
+      "size": 230742
+    },
+    {
+      "id": "0.2.7.6-debug",
+      "version": "0.2.7.6",
+      "build": "debug",
+      "file": "libSceAmpr.sprx-0.2.7.6-debug",
+      "sha256": "7aede0fb0e79054142956c82f16e0631bb836810cb470998989a1ee5f87d1eab",
+      "size": 378998
+    }
+  ]
+}
