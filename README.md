@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.3.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.3.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.4.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.4.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,10 +25,10 @@ tablet, or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.3.0 adds automatic extraction for supported RAR and 7z package
-archives, a new installed-game Library page, APR Emu update actions, bundled
-nanoDNS autostart for browser-assisted provider capture, a cleaner compact UI,
-and fixes for queue refresh and provider link opening.
+Version 1.4.0 adds a PS5 file manager, manual local `.pkg` install, PS5 Game
+Browser catalog scraping support, faster large-folder deletion, `.ffpkg` and
+`.ffpfsc` APR Emu update/delete support, and remote APR Emu downloads with
+selectable reinstall builds.
 
 ## Demo
 
@@ -38,7 +38,7 @@ and fixes for queue refresh and provider link opening.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.3.0/pegasus_dl.elf) | `1.3.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.4.0/pegasus_dl.elf) | `1.4.0` |
 
 ## Quick Start
 
@@ -57,10 +57,12 @@ and fixes for queue refresh and provider link opening.
    captures or resolves the final download.
 8. Use the Library tab to review installed games, update APR Emu where
    supported, or delete recognized installs.
+9. Use the File Manager tab to browse storage, transfer files, or install a
+   local `.pkg` when needed.
 
 ## Features
 
-| Area | Included in 1.3.0 |
+| Area | Included in 1.4.0 |
 | --- | --- |
 | Sources | Add catalog files or URL sources, enable or disable sources, delete sources |
 | Store catalog | Search packages, filter by source, review versions, sizes, details, and links |
@@ -69,10 +71,11 @@ and fixes for queue refresh and provider link opening.
 | Archives | Detect supported single-file `.rar`, RAR5, and `.7z` links, extract automatically, prompt for RAR passwords, and reject split archives |
 | Queue control | Pause, resume, cancel, retry, and clear finished jobs |
 | Storage | Browse writable destinations, create folders, and choose where downloads land |
+| File Manager | Browse mounted storage, upload and download files, copy, move, rename, delete, archive folders, and install local `.pkg` files |
 | Performance | Use multiple download connections with resume support when the host allows it |
 | Logs | View payload messages and browser-side errors from the Logs tab |
 | Provider links | Resolve supported providers inside the payload, or use PS5 browser-assisted capture for compatible provider pages |
-| APR Emu | Detect and update bundled APR Emu 0.2.6 for supported folder-backed and exFAT image-backed installs |
+| APR Emu | Detect, update, and reinstall remote APR Emu releases for supported folder-backed and image-backed installs |
 | nanoDNS | nanoDNS is now embedded inside Pegasus DL and autostarts on launch |
 
 ## Catalogs
@@ -121,7 +124,7 @@ Minimal catalog:
 
 ## Archive Downloads
 
-Pegasus DL 1.3.0 recognizes supported archive links before queueing them. A
+Pegasus DL recognizes supported archive links before queueing them. A
 single-file `.rar`, RAR5, or `.7z` download is extracted into the selected
 destination automatically instead of leaving the archive file behind.
 
@@ -140,18 +143,29 @@ The Library tab reads installed titles from the PS5 app database and shows game
 metadata, art when available, backing storage type, location, image-backed size,
 and APR Emu state.
 
-APR Emu 0.2.6 is bundled with Pegasus DL. The Library can update supported
-folder-backed games and exFAT image-backed games by replacing
-`fakelib/libSceAmpr.sprx`. `.ffpkg`, `.ffpfs`, and `.ffpfsc` storage is detected
-but not patched yet.
+APR Emu versions are fetched from this public repo at runtime. The Library can
+update supported installs to the latest remote release or reinstall a selected
+release/debug build after verifying the downloaded SPRX hash. Folder-backed
+games and supported `.exfat`, `.ffpkg`, and `.ffpfsc` image-backed games are
+patched by replacing `fakelib/libSceAmpr.sprx`; raw `.ffpfs` remains unsupported
+for APR mutation.
 
 The Library can also delete recognized installed games. Deletion is
 irreversible: Pegasus removes the resolved backing image or folder, cleans the
 title trackers when present, and removes the app database rows for that title.
+Large recursive folder deletes now run through a cancellable background worker
+so the UI stays responsive while cleanup progresses.
+
+## File Manager
+
+The File Manager tab browses PS5 storage from the web UI. It supports browser
+uploads, single-file downloads, folder archive downloads, rename, copy, move,
+delete, and new folder creation. `.pkg` files can be handed to the native PS5
+installer from the file list.
 
 ## Provider Links
 
-Pegasus DL does not require the separate Pegasus Resolver service in 1.3.0.
+Pegasus DL does not require the separate Pegasus Resolver service.
 Provider handling now lives in the payload.
 
 Direct links continue to download without any provider flow. For supported
@@ -169,25 +183,22 @@ Current provider handling:
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.3.0 Notes
+## 1.4.0 Notes
 
-- Added automatic extraction for supported single-file RAR/RAR5 and 7z package
-  archives.
-- Added the installed-game Library page with metadata, art, storage details,
-  APR Emu status, APR Emu update actions, and supported game deletion.
-- Bundled APR Emu 0.2.6 and added update support for folder-backed installs
-  and exFAT image-backed installs.
-- Embedded nanoDNS and starts it automatically for browser-assisted provider
-  capture.
-- Cleaned up the web UI with top navigation, compact queue behavior, local
-  fonts, no-image placeholders, loading states, and panel layout fixes.
-- Fixed queue UI refresh issues and removed the browser warmup step when
-  opening provider links.
+- Added the File Manager tab for browsing PS5 storage, uploads, downloads,
+  folder archive downloads, rename, copy, move, delete, and folder creation.
+- Added manual local `.pkg` installation from File Manager.
+- Added remote APR Emu downloads, selectable release/debug reinstalls, and
+  latest-release updates without embedding a fixed SPRX in the payload.
+- Added APR Emu update/delete support for supported `.ffpkg` and `.ffpfsc`
+  image-backed installs.
+- Improved large folder game deletion with faster cleanup and clearer progress.
+- Added PS5 Game Browser support to the scraper/catalog tooling.
 
 ## Scope
 
-Pegasus DL is a downloader. It does not install packages, include package
-catalogs, provide package links, bypass accounts, spoof PSN, bypass anti-cheat,
-or unlock content.
+Pegasus DL is a downloader and local file-management tool. It does not include
+package catalogs, provide package links, bypass accounts, spoof PSN, bypass
+anti-cheat, or unlock content.
 
 Use it only with content you own or have permission to download.
