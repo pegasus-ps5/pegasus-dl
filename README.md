@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.4.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.4.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.5.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.5.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,10 +25,10 @@ tablet, or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.4.0 adds a PS5 file manager, manual local `.pkg` install, PS5 Game
-Browser catalog scraping support, faster large-folder deletion, `.ffpkg` and
-`.ffpfsc` APR Emu update/delete support, and remote APR Emu downloads with
-selectable reinstall builds.
+Version 1.5.0 adds a dual-pane File Manager workflow, mount shortcuts, File
+Manager RAR extraction, less invasive APR Emu runtime overrides, startup and
+library-load APR override application, and more tolerant download-link intake
+for encoded links.
 
 ## Demo
 
@@ -38,7 +38,7 @@ selectable reinstall builds.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.4.0/pegasus_dl.elf) | `1.4.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.5.0/pegasus_dl.elf) | `1.5.0` |
 
 ## Quick Start
 
@@ -62,7 +62,7 @@ selectable reinstall builds.
 
 ## Features
 
-| Area | Included in 1.4.0 |
+| Area | Included in 1.5.0 |
 | --- | --- |
 | Sources | Add catalog files or URL sources, enable or disable sources, delete sources |
 | Store catalog | Search packages, filter by source, review versions, sizes, details, and links |
@@ -71,7 +71,7 @@ selectable reinstall builds.
 | Archives | Detect supported single-file `.rar`, RAR5, and `.7z` links, extract automatically, prompt for RAR passwords, and reject split archives |
 | Queue control | Pause, resume, cancel, retry, and clear finished jobs |
 | Storage | Browse writable destinations, create folders, and choose where downloads land |
-| File Manager | Browse mounted storage, upload and download files, copy, move, rename, delete, archive folders, and install local `.pkg` files |
+| File Manager | Browse mounted storage, upload and download files, copy, move, rename, delete, archive folders, extract RAR files, use mount shortcuts, and install local `.pkg` files |
 | Performance | Use multiple download connections with resume support when the host allows it |
 | Logs | View payload messages and browser-side errors from the Logs tab |
 | Provider links | Resolve supported providers inside the payload, or use PS5 browser-assisted capture for compatible provider pages |
@@ -183,17 +183,16 @@ Current provider handling:
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.4.0 Notes
+## 1.5.0 Notes
 
-- Added the File Manager tab for browsing PS5 storage, uploads, downloads,
-  folder archive downloads, rename, copy, move, delete, and folder creation.
-- Added manual local `.pkg` installation from File Manager.
-- Added remote APR Emu downloads, selectable release/debug reinstalls, and
-  latest-release updates without embedding a fixed SPRX in the payload.
-- Added APR Emu update/delete support for supported `.ffpkg` and `.ffpfsc`
-  image-backed installs.
-- Improved large folder game deletion with faster cleanup and clearer progress.
-- Added PS5 Game Browser support to the scraper/catalog tooling.
+- Reworked File Manager into a dual-pane workflow with operation status kept at
+  the top and only current operations shown.
+- Added File Manager mount shortcuts and a RAR extraction action.
+- Improved File Manager write operations with refreshed directory state,
+  clearer error output, and permissive permissions for created/uploaded files.
+- Added less invasive APR Emu runtime overrides that can auto-apply on startup
+  and Library load.
+- Made download-link intake more tolerant, including encoded link forms.
 
 ## Scope
 
