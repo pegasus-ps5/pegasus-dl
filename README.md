@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.6.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.6.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.7.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.7.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,8 +25,8 @@ tablet, or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.6.0 adds Real-Debrid queueing, Filek browser capture support, and a
-combined Downloads settings panel with four download connections by default.
+Version 1.7.0 adds TorBox queueing, manual link downloads, URL source refresh,
+and tighter handling for provider captures and download sockets.
 
 ## Demo
 
@@ -36,7 +36,7 @@ combined Downloads settings panel with four download connections by default.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.6.0/pegasus_dl.elf) | `1.6.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.7.0/pegasus_dl.elf) | `1.7.0` |
 
 ## Quick Start
 
@@ -60,12 +60,12 @@ combined Downloads settings panel with four download connections by default.
 
 ## Features
 
-| Area | Included in 1.6.0 |
+| Area | Included in 1.7.0 |
 | --- | --- |
-| Sources | Add catalog files or URL sources, enable or disable sources, delete sources |
+| Sources | Add catalog files or URL sources, refresh URL sources, enable or disable sources, delete sources |
 | Store catalog | Search packages, filter by source, review versions, sizes, details, and links |
 | Installed Library | List installed games with app database metadata, art, storage details, APR Emu status, update actions, and supported deletion |
-| Downloads | Queue direct or resolved links, track download, merge, extraction, finalization, speed, ETA, and final status |
+| Downloads | Queue catalog links, manual links, direct or resolved links, track download, merge, extraction, finalization, speed, ETA, and final status |
 | Archives | Detect supported single-file `.rar`, RAR5, and `.7z` links, extract automatically, prompt for RAR passwords, and reject split archives |
 | Queue control | Pause, resume, cancel, retry, and clear finished jobs |
 | Storage | Browse writable destinations, create folders, and choose where downloads land |
@@ -73,7 +73,7 @@ combined Downloads settings panel with four download connections by default.
 | Performance | Use multiple download connections with resume support when the host allows it |
 | Logs | View payload messages and browser-side errors from the Logs tab |
 | Provider links | Resolve supported providers inside the payload, or use PS5 browser-assisted capture for compatible provider pages |
-| Real-Debrid | Save a local API token, validate supported hosts, badge compatible links, choose returned files, and queue resolved downloads |
+| Debrid services | Save local Real-Debrid and TorBox API tokens, validate supported hosts, badge compatible links, choose returned files, and queue resolved downloads |
 | APR Emu | Detect, update, and reinstall remote APR Emu releases for supported folder-backed and image-backed installs |
 | nanoDNS | nanoDNS is now embedded inside Pegasus DL and autostarts on launch |
 
@@ -178,21 +178,24 @@ Current provider handling:
 | Provider state | Behavior |
 | --- | --- |
 | Built-in resolver | BuzzHeavier, DataNodes, and MediaFire can resolve direct package links from inside Pegasus DL |
-| Real-Debrid | Links from supported hosts can resolve through Real-Debrid and queue through the normal downloader when a token is configured |
+| Debrid services | Links from supported hosts can resolve through Real-Debrid or TorBox and queue through the normal downloader when a token is configured |
 | Browser-assisted | Filek, VikingFile, and Rootz use the PS5 browser capture flow |
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.6.0 Notes
+## 1.7.0 Notes
 
-- Added Real-Debrid support with a local token setting, token-free status
-  responses, supported-host badges, multi-file selection, and queueing through
-  the normal downloader.
-- Kept fresh downloads on four ranged connections by default, moved supported
-  provider details into the Downloads settings panel, and tightened range-probe
-  fallback for hosts that return too much data.
-- Added Filek as a supported direct browser-capture provider alongside
-  VikingFile.
+- Added TorBox support with local token storage, supported-host detection,
+  service selection when multiple debrid providers match, multi-file selection,
+  and queueing through the normal downloader.
+- Added manual link downloads so a direct URL can be named and queued without a
+  catalog entry.
+- URL sources can now be refreshed in place, and enabled URL sources refresh
+  automatically from the backend.
+- Improved provider capture by detecting download file extensions more reliably
+  and tuning PS5 curl socket behavior during downloads.
+- Refined Store artwork sizing, equal-height grid rows, and the settings panels
+  for download and debrid controls.
 
 ## Scope
 
