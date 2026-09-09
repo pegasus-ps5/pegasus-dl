@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.7.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.7.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.8.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.8.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,8 +25,8 @@ tablet, or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.7.0 adds TorBox queueing, manual link downloads, URL source refresh,
-and tighter handling for provider captures and download sockets.
+Version 1.8.0 adds native PS5 Downloads handoff for direct and resolved `.pkg`
+links and moves the Pegasus DL launcher tile to the PS5 Media area.
 
 ## Demo
 
@@ -36,7 +36,7 @@ and tighter handling for provider captures and download sockets.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.7.0/pegasus_dl.elf) | `1.7.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.8.0/pegasus_dl.elf) | `1.8.0` |
 
 ## Quick Start
 
@@ -60,12 +60,12 @@ and tighter handling for provider captures and download sockets.
 
 ## Features
 
-| Area | Included in 1.7.0 |
+| Area | Included in 1.8.0 |
 | --- | --- |
 | Sources | Add catalog files or URL sources, refresh URL sources, enable or disable sources, delete sources |
 | Store catalog | Search packages, filter by source, review versions, sizes, details, and links |
 | Installed Library | List installed games with app database metadata, art, storage details, APR Emu status, update actions, and supported deletion |
-| Downloads | Queue catalog links, manual links, direct or resolved links, track download, merge, extraction, finalization, speed, ETA, and final status |
+| Downloads | Queue catalog links, manual links, direct or resolved links, hand off `.pkg` links to PS5 Downloads, and track Pegasus download, merge, extraction, finalization, speed, ETA, and final status |
 | Archives | Detect supported single-file `.rar`, RAR5, and `.7z` links, extract automatically, prompt for RAR passwords, and reject split archives |
 | Queue control | Pause, resume, cancel, retry, and clear finished jobs |
 | Storage | Browse writable destinations, create folders, and choose where downloads land |
@@ -183,19 +183,14 @@ Current provider handling:
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.7.0 Notes
+## 1.8.0 Notes
 
-- Added TorBox support with local token storage, supported-host detection,
-  service selection when multiple debrid providers match, multi-file selection,
-  and queueing through the normal downloader.
-- Added manual link downloads so a direct URL can be named and queued without a
-  catalog entry.
-- URL sources can now be refreshed in place, and enabled URL sources refresh
-  automatically from the backend.
-- Improved provider capture by detecting download file extensions more reliably
-  and tuning PS5 curl socket behavior during downloads.
-- Refined Store artwork sizing, equal-height grid rows, and the settings panels
-  for download and debrid controls.
+- Direct and resolved `.pkg` links can now be handed to the native PS5
+  downloader after an explicit user action.
+- Native package handoff works across direct links, browser-captured links,
+  Real-Debrid, and TorBox, with clear dispatch feedback in the web interface.
+- Updated the launcher package metadata so the Pegasus DL tile appears in the
+  PS5 Media area instead of the Games area.
 
 ## Scope
 
