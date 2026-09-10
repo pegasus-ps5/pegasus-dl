@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "onboardingRevision": 1,
+  "sources": [
+    {
+      "id": "evox-coreos",
+      "name": "evoX-CoreOS",
+      "description": "Homebrew apps and community utilities",
+      "url": "https://raw.githubusercontent.com/nexgen999/evoX-CoreOS/refs/heads/main/json/pegasus-dl/catalog.json",
+      "defaultEnabled": true
+    },
+    {
+      "id": "dlps",
+      "name": "DLPS Catalog",
+      "description": "Games and DLCs from DLPSGAME in various formats",
+      "url": "https://pegasus-catalog.fly.dev/catalogs/dlps.json",
+      "defaultEnabled": true
+    },
+    {
+      "id": "pippo-exfat",
+      "name": "Pippo .exFAT",
+      "description": "Games and DLCs in .exfat format",
+      "url": "https://pegasus-catalog.fly.dev/catalogs/pippo.json",
+      "defaultEnabled": true
+    },
+    {
+      "id": "pfs",
+      "name": "PFS Catalog",
+      "description": "Games and DLCs in .ffpfsc format",
+      "url": "https://pegasus-catalog.fly.dev/catalogs/pfs.json",
+      "defaultEnabled": true
+    }
+  ]
+}
