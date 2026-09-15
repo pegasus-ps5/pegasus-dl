@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.8.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.8.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.9.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.9.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,8 +25,7 @@ tablet, or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.8.0 adds native PS5 Downloads handoff for direct and resolved `.pkg`
-links and moves the Pegasus DL launcher tile to the PS5 Media area.
+Version 1.9.0 adds Included catalog sources and improves redirected `.pkg` handoff.
 
 ## Demo
 
@@ -36,7 +35,7 @@ links and moves the Pegasus DL launcher tile to the PS5 Media area.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.8.0/pegasus_dl.elf) | `1.8.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.9.0/pegasus_dl.elf) | `1.9.0` |
 
 ## Quick Start
 
@@ -60,9 +59,9 @@ links and moves the Pegasus DL launcher tile to the PS5 Media area.
 
 ## Features
 
-| Area | Included in 1.8.0 |
+| Area | Included in 1.9.0 |
 | --- | --- |
-| Sources | Add catalog files or URL sources, refresh URL sources, enable or disable sources, delete sources |
+| Sources | Add catalog files or URL sources, discover and enable Included sources, refresh URL sources, enable or disable sources, delete sources |
 | Store catalog | Search packages, filter by source, review versions, sizes, details, and links |
 | Installed Library | List installed games with app database metadata, art, storage details, APR Emu status, update actions, and supported deletion |
 | Downloads | Queue catalog links, manual links, direct or resolved links, hand off `.pkg` links to PS5 Downloads, and track Pegasus download, merge, extraction, finalization, speed, ETA, and final status |
@@ -183,14 +182,15 @@ Current provider handling:
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.8.0 Notes
+## 1.9.0 Notes
 
-- Direct and resolved `.pkg` links can now be handed to the native PS5
-  downloader after an explicit user action.
-- Native package handoff works across direct links, browser-captured links,
-  Real-Debrid, and TorBox, with clear dispatch feedback in the web interface.
-- Updated the launcher package metadata so the Pegasus DL tile appears in the
-  PS5 Media area instead of the Games area.
+- Added Included sources backed by the remotely maintained catalog manifest, so
+  available catalogs can be discovered and enabled without entering their URLs
+  manually.
+- Included sources preserve user state and cached packages across manifest
+  updates, retain the last valid manifest, and identify newly added entries.
+- Catalog `.pkg` links now resolve redirects before native PS5 Downloads
+  handoff, avoiding unresolved download-page redirects during AppInst requests.
 
 ## Scope
 
