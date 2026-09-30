@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.10.0"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
-  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.10.0/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/tag/v1.10.1"><img alt="Release" src="https://img.shields.io/github/v/release/pegasus-ps5/pegasus-dl?label=release&color=24292f"></a>
+  <a href="https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.10.1/pegasus_dl.elf"><img alt="Download" src="https://img.shields.io/badge/download-release-24292f"></a>
   <img alt="Built-in providers" src="https://img.shields.io/badge/providers-built--in-24292f">
   <img alt="PS5 homebrew" src="https://img.shields.io/badge/PS5-homebrew-24292f">
 </p>
@@ -25,7 +25,8 @@ tablet, or computer.
 It is designed to keep the download workflow on the PS5 instead of routing
 packages through another machine first.
 
-Version 1.10.0 updates the payload SDK and embedded nanoDNS for firmware 13.60.
+Version 1.10.1 improves Store browsing, search, and poster loading for large
+catalogs.
 
 ## Demo
 
@@ -35,7 +36,7 @@ Version 1.10.0 updates the payload SDK and embedded nanoDNS for firmware 13.60.
 
 | Release | Version |
 | --- | --- |
-| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.10.0/pegasus_dl.elf) | `1.10.0` |
+| [`pegasus_dl.elf`](https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.10.1/pegasus_dl.elf) | `1.10.1` |
 
 ## Quick Start
 
@@ -59,7 +60,7 @@ Version 1.10.0 updates the payload SDK and embedded nanoDNS for firmware 13.60.
 
 ## Features
 
-| Area | Included in 1.10.0 |
+| Area | Included in 1.10.1 |
 | --- | --- |
 | Sources | Add catalog files or URL sources, discover and enable Included sources, refresh URL sources, enable or disable sources, delete sources |
 | Store catalog | Search packages, filter by source, review versions, sizes, details, and links |
@@ -182,10 +183,10 @@ Current provider handling:
 | Unknown | Pegasus can try guarded browser capture and queue the URL only after response validation |
 | Not supported | The link can still be opened in the PS5 browser, but Pegasus will not queue from it automatically |
 
-## 1.10.0 Notes
+## 1.10.1 Notes
 
-- Updated the PS5 payload SDK to v0.43 and embedded nanoDNS to 0.4, bringing
-  firmware 13.60 support to the payload and browser-assisted provider capture.
+- Faster Store search and source filtering for large catalogs, with cached
+  results and a short delay while typing to avoid repeated filtering.
 
 ## Scope
 
