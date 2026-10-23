@@ -4,13 +4,6 @@
   "onboardingRevision": 1,
   "sources": [
     {
-      "id": "evox-coreos",
-      "name": "evoX-CoreOS",
-      "description": "Homebrew apps and community utilities",
-      "url": "https://raw.githubusercontent.com/nexgen999/evoX-CoreOS/refs/heads/main/json/pegasus-dl/catalog.json",
-      "defaultEnabled": true
-    },
-    {
       "id": "dlps",
       "name": "DLPS Catalog",
       "description": "Games and DLCs from DLPSGAME in various formats",
@@ -29,6 +22,13 @@
       "name": "PFS Catalog",
       "description": "Games and DLCs in .ffpfsc and .pkg format",
       "url": "https://pegasus-dl.dev/catalogs/pfs.json",
+      "defaultEnabled": true
+    },
+    {
+      "id": "evox-coreos",
+      "name": "evoX-CoreOS",
+      "description": "Homebrew apps and community utilities",
+      "url": "https://raw.githubusercontent.com/nexgen999/evoX-CoreOS/refs/heads/main/json/pegasus-dl/catalog.json",
       "defaultEnabled": true
     },
     {
