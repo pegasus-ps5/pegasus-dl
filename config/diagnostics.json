@@ -1,0 +1,11 @@
+{
+  "type": "pegasus-diagnostics-policy",
+  "version": 1,
+  "revision": 2,
+  "issued_at": 1792884795,
+  "expires_at": 1795476795,
+  "enabled": true,
+  "error_codes": [
+    "browser.runtime.failed"
+  ]
+}
