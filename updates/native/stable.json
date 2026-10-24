@@ -1,0 +1,13 @@
+{
+  "build_id": "ps5-v2.0.0_f94875b6109e-0a0b988f6d70-37339953",
+  "channel": "stable",
+  "format": "ffpfsc",
+  "product": "pegasus-dl-native",
+  "release_url": "https://github.com/pegasus-ps5/pegasus-dl/releases/tag/native-v2.0.0",
+  "schema": 1,
+  "sha256": "eb910e353d477adba75c91312bc8b2f5e5c5f6a548871b1fc31cd4db33ea318d",
+  "size": 46268416,
+  "title_id": "PPSA99998",
+  "url": "https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.0/PPSA99998.ffpfsc",
+  "version": "2.0.0"
+}
