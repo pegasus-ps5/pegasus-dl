@@ -5,7 +5,7 @@
 Browse catalogs, download files and install compatible packages directly on
 your PS5, using your controller.
 
-**[Download Pegasus DL+ 2.0.2](https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.2/PPSA99998.ffpfsc)**
+**[Download Pegasus DL+ 2.0.3](https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.3/PPSA99998.ffpfsc)**
 
 ## Features
 
