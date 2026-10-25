@@ -1,11 +1,21 @@
 {
   "type": "pegasus-diagnostics-policy",
   "version": 1,
-  "revision": 2,
-  "issued_at": 1792884795,
-  "expires_at": 1795476795,
+  "revision": 3,
+  "issued_at": 1792892780,
+  "expires_at": 1795484780,
   "enabled": true,
   "error_codes": [
-    "browser.runtime.failed"
+    "browser.runtime.failed",
+    "browser.failed",
+    "browser.navigation.failed",
+    "browser.terminated",
+    "browser.stalled",
+    "browser.interrupted",
+    "browser.inspection.unavailable",
+    "browser.inspection.not_ready",
+    "browser.startup.pending",
+    "browser.journal_unavailable",
+    "process.crash"
   ]
 }

@@ -5,7 +5,7 @@
 Browse catalogs, download files and install compatible packages directly on
 your PS5, using your controller.
 
-**[Download Pegasus DL+ 2.0.1](https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.1/PPSA99998.ffpfsc)**
+**[Download Pegasus DL+ 2.0.2](https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.2/PPSA99998.ffpfsc)**
 
 ## Features
 
@@ -29,5 +29,7 @@ running ELF loader.
 The app checks for updates at startup. Update preferences are in Settings.
 
 Pegasus DL+ reports app launches and reliability diagnostics to help improve the app.
+Selected failures may automatically attach a redacted diagnostic log, retained
+for seven days.
 
 Thanks to **nexgen infinity** for testing Pegasus DL+.
