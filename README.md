@@ -5,13 +5,14 @@
 Browse catalogs, download files and install compatible packages directly on
 your PS5, using your controller.
 
-**[Download Pegasus DL+ 2.0.3](https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.3/PPSA99998.ffpfsc)**
+**[Download Pegasus DL+ 2.0.4](https://github.com/pegasus-ps5/pegasus-dl/releases/download/native-v2.0.4/PPSA99998.ffpfsc)**
 
 ## Features
 
 - Browse and search catalogs, compare available versions and choose a download link.
 - Open provider pages in the built-in browser and capture downloads.
 - Manage the download queue, choose destinations, and extract supported archives.
+- Extract folder games for ShadowMount while preserving backport folders and hiding unfinished extractions.
 - Connect Real-Debrid or TorBox, including account linking from your phone.
 - Browse installed titles and manage files across mounted storage.
 - Choose from ten languages, with localized keyboards and Arabic RTL support.
