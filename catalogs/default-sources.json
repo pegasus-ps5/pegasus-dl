@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 3,
+  "revision": 4,
   "onboardingRevision": 1,
   "sources": [
     {
@@ -36,6 +36,13 @@
       "name": "ZER0GAME Catalog",
       "description": "Games and DLCs in .pkg format",
       "url": "https://pegasus-dl.dev/catalogs/zer0.json",
+      "defaultEnabled": true
+    },
+    {
+      "id": "padrino",
+      "name": "Padrino",
+      "description": "PS5 games and download mirrors from Padrino",
+      "url": "https://pegasus-dl.dev/catalogs/padrino-store.json",
       "defaultEnabled": true
     }
   ]
